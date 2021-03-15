@@ -39,8 +39,12 @@ def Netflix():
   return f'Netflix Code: {code3}'
 
 def Spotify():
-  code3 = ''.join(random.choices(string.ascii_uppercase + string.digits, k=19))
-  return f'Spotify Code: {code3}'
+  code4 = ''.join(random.choices(string.ascii_uppercase + string.digits, k=19))
+  return f'Spotify Code: {code4}'
+
+def Blizzard():
+    code5 = ('').join(random.choices(string.ascii_uppercase + string.digits, k=20))
+    return f'Blizzard Code: {code5}'
 
 @bot.command()
 async def help(ctx):
@@ -51,6 +55,7 @@ async def help(ctx):
     embed.add_field(name="!nitrobox", value="Generates a random Xbox Nitro Code Unchecked",inline=False)
     embed.add_field(name="!netflix", value="Generates a random Netflix Unchecked Code", inline=False)
     embed.add_field(name="!nike", value="Generates a random Nike Unchecked Code", inline=False)
+    embed.add_field(name="!blizzard", value="Generates a random Blizzard Unchecked Code", inline=False)
     embed.add_field(name="!spotify", value="Generates a random Spotify Unchecked Code", inline=False)
     embed.set_footer(text="This bot is open source: https://github.com/x-name15/Very-Basic-GiftCards-Bot-Discord")
     await ctx.send(embed=embed)
@@ -75,5 +80,9 @@ async def netflix(ctx):
 async def spotify(ctx):
     await ctx.send(Spotify())
 
+@bot.command()
+async def blizzard(ctx):
+    await ctx.send(Blizzard())    
+    
 token = os.environ.get("DISCORD_BOT_SECRET")
 bot.run(token)
