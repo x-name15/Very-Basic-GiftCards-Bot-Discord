@@ -18,7 +18,7 @@ gamePlaying = random.choice(Game)
 async def on_ready():
     print("Im ready!")
     print("----------")
-    print('Logued in:')
+    print('Logged in:')
     print(bot.user.name)
     await bot.change_presence(status=discord.Status.online, activity=discord.Game(gamePlaying))
 
